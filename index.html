@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First HTML Page</title>
-    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <title>HTML Forms and Input Elements</title>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
+    <h1>HTML Forms and Input Elements</h1>
     
-    <p>This is my first HTML page. I'm excited to learn web development!</p>
+    <p>Let's create a professional-looking form to collect user information:</p>
     
-    <h2>Things to Learn:</h2>
-    
-    <ul>
-        <li><strong>HTML:</strong> The structure of a web page.</li>
-        <li><strong>CSS:</strong> Styling and layout of web pages.</li>
-        <li><strong>JavaScript:</strong> Adding interactivity to web pages.</li>
-    </ul>
-    
-    <p>Check out the <a href="https://www.sbrcinfosys.com/">SBRC</a> for more information.</p>
-    
-    <img src="https://t3.ftcdn.net/jpg/03/12/44/34/360_F_312443477_5lxDV8QHzXyOwMH4FxLmU4Y93h12NZEJ.jpg" alt="Placeholder Image">
-    
-    <button onclick="generatePDF()">Generate PDF</button>
-    
+    <!-- Start of the Form -->
+    <form onsubmit="showSubmittedMessage(); return false;">
+        <!-- Text Input -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+
+        <!-- Radio Buttons -->
+        <p>Gender:</p>
+        <label for="male">
+            <input type="radio" id="male" name="gender" value="male"> Male
+        </label>
+        <label for="female">
+            <input type="radio" id="female" name="gender" value="female"> Female
+        </label>
+
+        <!-- Checkbox -->
+        <p>Interests:</p>
+        <label for="coding">
+            <input type="checkbox" id="coding" name="interests" value="coding"> Coding
+        </label>
+        <label for="design">
+            <input type="checkbox" id="design" name="interests" value="design"> Design
+        </label>
+        <label for="gaming">
+            <input type="checkbox" id="gaming" name="interests" value="gaming"> Gaming
+        </label>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+    <!-- End of the Form -->
+
     <script>
-        function generatePDF() {
-            var element = document.body;
-            html2pdf(element);
+        function showSubmittedMessage() {
+            // Display an alert when the form is submitted
+            alert('Form submitted successfully!');
         }
     </script>
 </body>
