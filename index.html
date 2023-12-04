@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Semantics and Accessibility</title>
+    <title>Day 5: Mastering Layouts with CSS</title>
 
     <style>
         body {
@@ -14,116 +14,114 @@
             color: #333;
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #4CAF50;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        section {
-            margin: 20px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        article {
+            border-radius: 8px;
             margin-bottom: 20px;
         }
 
-        h2 {
+        h1, h2, h3 {
             color: #4CAF50;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        p {
+            line-height: 1.6;
+        }
+
+        .example-container {
+            margin-bottom: 40px;
+        }
+
+        .code-container {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Web Development Blog</h1>
-        <p>Welcome to our blog where we explore the world of web development!</p>
-    </header>
 
-    <!-- Navigation Section -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#articles">Articles</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <h1>Day 5: Mastering Layouts with CSS</h1>
+        <p>Welcome to Day 5 of our web development journey! Today, we'll explore the <code>display</code> and <code>position</code> properties in CSS to gain better control over the layout and positioning of elements on a webpage.</p>
+    </div>
 
-    <!-- Main Content Section -->
-    <section>
-        <h2 id="home">Home</h2>
-        <p>This is the main landing page of our blog. Explore the latest web development trends and topics.</p>
-    </section>
+    <!-- Display Property Explanation -->
+    <div class="container">
+        <h2>The <code>display</code> Property</h2>
+        <p>The <code>display</code> property determines how an element is rendered on the page. There are three commonly used values: <code>block</code>, <code>inline</code>, and <code>inline-block</code>.</p>
 
-    <!-- Articles Section -->
-    <section>
-        <h2 id="articles">Latest Articles</h2>
-        <!-- Article 1 -->
-        <article>
-            <h3>Building Responsive Websites</h3>
-            <p>Learn the essentials of creating responsive websites that adapt to different screen sizes.</p>
-        </article>
-        <!-- Article 2 -->
-        <article>
-            <h3>Introduction to Accessibility</h3>
-            <p>Understand the importance of making your websites accessible to everyone.</p>
-        </article>
-    </section>
+        <div class="example-container">
+            <h3>Example: Block Element</h3>
+            <div class="code-container">
+                <p>&lt;div class="block-element"&gt;&lt;/div&gt;</p>
+            </div>
+            <p>The block element takes up the full width available and starts on a new line.</p>
+        </div>
 
-    <!-- About Us Section -->
-    <section>
-        <h2 id="about">About Us</h2>
-        <p>Discover more about our team and the mission behind our web development blog.</p>
-    </section>
+        <div class="example-container">
+            <h3>Example: Inline Element</h3>
+            <div class="code-container">
+                <p>&lt;span class="inline-element"&gt;&lt;/span&gt;</p>
+            </div>
+            <p>The inline element only takes up as much width as necessary and does not start on a new line.</p>
+        </div>
 
-    <!-- Contact Section -->
-    <section>
-        <h2 id="contact">Contact Us</h2>
-        <p>Have questions or suggestions? Reach out to us via email or social media.</p>
-    </section>
+        <div class="example-container">
+            <h3>Example: Inline-Block Element</h3>
+            <div class="code-container">
+                <p>&lt;div class="inline-block-element"&gt;&lt;/div&gt;</p>
+            </div>
+            <p>The inline-block element takes up only as much width as necessary, but it allows for setting a height and width.</p>
+        </div>
+    </div>
+
+    <!-- Position Property Explanation -->
+    <div class="container">
+        <h2>The <code>position</code> Property</h2>
+        <p>The <code>position</code> property is used to specify the positioning method of an element. The values include <code>static</code>, <code>relative</code>, and <code>absolute</code>.</p>
+
+        <div class="example-container">
+            <h3>Example: Position Static</h3>
+            <div class="code-container">
+                <p>&lt;div class="position-static"&gt;&lt;/div&gt;</p>
+            </div>
+            <p>The static position is the default positioning. Elements are positioned according to the normal flow of the document.</p>
+        </div>
+
+        <div class="example-container">
+            <h3>Example: Position Relative</h3>
+            <div class="code-container">
+                <p>&lt;div class="position-relative"&gt;&lt;/div&gt;</p>
+            </div>
+            <p>The relative position allows you to move an element relative to its normal position without affecting other elements.</p>
+        </div>
+
+        <div class="example-container">
+            <h3>Example: Position Absolute</h3>
+            <div class="code-container">
+                <p>&lt;div class="position-absolute"&gt;&lt;/div&gt;</p>
+            </div>
+            <p>The absolute position positions an element absolutely to its nearest positioned ancestor, or to the initial containing block if there is none.</p>
+        </div>
+    </div>
+
+    <!-- Task for Students -->
+    <div class="container">
+        <h2>Task for Students</h2>
+        <p>Now it's time to practice what you've learned! Create an HTML document and apply the <code>display</code> and <code>position</code> properties to various elements. Observe how each property affects the layout and positioning.</p>
+    </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2023 Web Development Blog. All rights reserved.</p>
+        <p>&copy; 2023 Web Development Learning. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
