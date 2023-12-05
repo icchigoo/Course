@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 5: Mastering Layouts with CSS</title>
+    <title>Day 6: Mastering Flexbox</title>
 
     <style>
         body {
@@ -43,79 +43,85 @@
             margin-top: 20px;
             overflow-x: auto;
         }
+
+        /* Flexbox Styles */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-item {
+            flex: 1;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            margin: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Day 5: Mastering Layouts with CSS</h1>
-        <p>Welcome to Day 5 of our web development journey! Today, we'll explore the <code>display</code> and <code>position</code> properties in CSS to gain better control over the layout and positioning of elements on a webpage.</p>
+        <h1>Day 6: Mastering Flexbox</h1>
+        <p>Welcome to Day 6! Today, we'll delve into the world of Flexbox, a powerful layout model that makes it easier to design complex, responsive, and flexible layouts.</p>
     </div>
 
-    <!-- Display Property Explanation -->
+    <!-- Flexbox Explanation -->
     <div class="container">
-        <h2>The <code>display</code> Property</h2>
-        <p>The <code>display</code> property determines how an element is rendered on the page. There are three commonly used values: <code>block</code>, <code>inline</code>, and <code>inline-block</code>.</p>
+        <h2>Understanding Flexbox</h2>
+        <p>Flexbox is a layout model in CSS that allows you to design complex layouts more efficiently. It involves a flex container and flex items.</p>
 
         <div class="example-container">
-            <h3>Example: Block Element</h3>
+            <h3>Flex Container</h3>
             <div class="code-container">
-                <p>&lt;div class="block-element"&gt;&lt;/div&gt;</p>
+                <p>&lt;div class="flex-container"&gt;&lt;/div&gt;</p>
             </div>
-            <p>The block element takes up the full width available and starts on a new line.</p>
+            <p>The <code>display: flex;</code> property is applied to create a flex container. It defines a flex context for its direct children.</p>
         </div>
 
         <div class="example-container">
-            <h3>Example: Inline Element</h3>
+            <h3>Flex Items</h3>
             <div class="code-container">
-                <p>&lt;span class="inline-element"&gt;&lt;/span&gt;</p>
+                <p>&lt;div class="flex-item"&gt;&lt;/div&gt;</p>
             </div>
-            <p>The inline element only takes up as much width as necessary and does not start on a new line.</p>
-        </div>
-
-        <div class="example-container">
-            <h3>Example: Inline-Block Element</h3>
-            <div class="code-container">
-                <p>&lt;div class="inline-block-element"&gt;&lt;/div&gt;</p>
-            </div>
-            <p>The inline-block element takes up only as much width as necessary, but it allows for setting a height and width.</p>
+            <p>Elements inside a flex container become flex items. Flex items can be arranged horizontally or vertically based on the container's properties.</p>
         </div>
     </div>
 
-    <!-- Position Property Explanation -->
+    <!-- Creating Flexible Layouts -->
     <div class="container">
-        <h2>The <code>position</code> Property</h2>
-        <p>The <code>position</code> property is used to specify the positioning method of an element. The values include <code>static</code>, <code>relative</code>, and <code>absolute</code>.</p>
+        <h2>Creating Flexible Layouts</h2>
+        <p>Flexbox provides properties to control the layout, alignment, and distribution of elements within a flex container. Let's explore some common properties:</p>
 
         <div class="example-container">
-            <h3>Example: Position Static</h3>
+            <h3>justify-content</h3>
             <div class="code-container">
-                <p>&lt;div class="position-static"&gt;&lt;/div&gt;</p>
+                <p>.flex-container {</p>
+                <p>  display: flex;</p>
+                <p>  justify-content: space-between;</p>
+                <p>}</p>
             </div>
-            <p>The static position is the default positioning. Elements are positioned according to the normal flow of the document.</p>
+            <p>The <code>justify-content</code> property aligns flex items along the main axis. The <code>space-between</code> value evenly distributes items, leaving equal space between them.</p>
         </div>
 
         <div class="example-container">
-            <h3>Example: Position Relative</h3>
+            <h3>align-items</h3>
             <div class="code-container">
-                <p>&lt;div class="position-relative"&gt;&lt;/div&gt;</p>
+                <p>.flex-container {</p>
+                <p>  display: flex;</p>
+                <p>  align-items: center;</p>
+                <p>}</p>
             </div>
-            <p>The relative position allows you to move an element relative to its normal position without affecting other elements.</p>
-        </div>
-
-        <div class="example-container">
-            <h3>Example: Position Absolute</h3>
-            <div class="code-container">
-                <p>&lt;div class="position-absolute"&gt;&lt;/div&gt;</p>
-            </div>
-            <p>The absolute position positions an element absolutely to its nearest positioned ancestor, or to the initial containing block if there is none.</p>
+            <p>The <code>align-items</code> property aligns flex items along the cross axis. The <code>center</code> value vertically centers the items.</p>
         </div>
     </div>
 
     <!-- Task for Students -->
     <div class="container">
         <h2>Task for Students</h2>
-        <p>Now it's time to practice what you've learned! Create an HTML document and apply the <code>display</code> and <code>position</code> properties to various elements. Observe how each property affects the layout and positioning.</p>
+        <p>Now it's your turn! Create an HTML document with a flex container and multiple flex items. Experiment with different values for <code>justify-content</code> and <code>align-items</code> to see how they affect the layout. Share your observations and any challenges you faced.</p>
     </div>
 
     <!-- Footer Section -->
