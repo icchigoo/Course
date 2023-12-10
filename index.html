@@ -3,131 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 6: Mastering Flexbox</title>
+    <title>Day 8: ES7 Features - UI Demo</title>
 
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             background-color: #f8f8f8;
-            color: #333;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 600px;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin-bottom: 20px;
         }
 
-        h1, h2, h3 {
-            color: #4CAF50;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .example-container {
-            margin-bottom: 40px;
-        }
-
-        .code-container {
-            background-color: #f0f0f0;
-            padding: 15px;
-            border-radius: 5px;
+        .output {
             margin-top: 20px;
-            overflow-x: auto;
-        }
-
-        /* Flexbox Styles */
-        .flex-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .flex-item {
-            flex: 1;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            margin: 10px;
-            text-align: center;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Day 6: Mastering Flexbox</h1>
-        <p>Welcome to Day 6! Today, we'll delve into the world of Flexbox, a powerful layout model that makes it easier to design complex, responsive, and flexible layouts.</p>
+        <h1>Day 8: ES7 Features - UI Demo</h1>
+
+        <!-- Exponentiation Operator -->
+        <h2>Exponentiation Operator</h2>
+        <p>The exponentiation operator (`**`) raises the left operand to the power of the right operand.</p>
+        <div class="output" id="exponentiationOutput"></div>
+
+        <!-- Async/Await -->
+        <h2>Async/Await</h2>
+        <p>Async functions and the await keyword simplify working with asynchronous code, making it more readable and easier to manage.</p>
+        <div class="output" id="asyncAwaitOutput"></div>
     </div>
 
-    <!-- Flexbox Explanation -->
-    <div class="container">
-        <h2>Understanding Flexbox</h2>
-        <p>Flexbox is a layout model in CSS that allows you to design complex layouts more efficiently. It involves a flex container and flex items.</p>
+    <script>
+        // Exponentiation Operator
+        const exponentiationOutput = document.getElementById('exponentiationOutput');
+        const base = 2;
+        const exponent = 3;
+        const result = base ** exponent;
+        exponentiationOutput.textContent = `${base} to the power of ${exponent} is ${result}`;
 
-        <div class="example-container">
-            <h3>Flex Container</h3>
-            <div class="code-container">
-                <p>&lt;div class="flex-container"&gt;&lt;/div&gt;</p>
-            </div>
-            <p>The <code>display: flex;</code> property is applied to create a flex container. It defines a flex context for its direct children.</p>
-        </div>
+        // Async/Await
+        const asyncAwaitOutput = document.getElementById('asyncAwaitOutput');
 
-        <div class="example-container">
-            <h3>Flex Items</h3>
-            <div class="code-container">
-                <p>&lt;div class="flex-item"&gt;&lt;/div&gt;</p>
-            </div>
-            <p>Elements inside a flex container become flex items. Flex items can be arranged horizontally or vertically based on the container's properties.</p>
-        </div>
-    </div>
+        // Simulate an asynchronous function
+        function fetchData() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('Data fetched!');
+                }, 1000);
+            });
+        }
 
-    <!-- Creating Flexible Layouts -->
-    <div class="container">
-        <h2>Creating Flexible Layouts</h2>
-        <p>Flexbox provides properties to control the layout, alignment, and distribution of elements within a flex container. Let's explore some common properties:</p>
+        async function fetchDataAsync() {
+            const data = await fetchData();
+            asyncAwaitOutput.textContent = `Async Function Result: ${data}`;
+        }
 
-        <div class="example-container">
-            <h3>justify-content</h3>
-            <div class="code-container">
-                <p>.flex-container {</p>
-                <p>  display: flex;</p>
-                <p>  justify-content: space-between;</p>
-                <p>}</p>
-            </div>
-            <p>The <code>justify-content</code> property aligns flex items along the main axis. The <code>space-between</code> value evenly distributes items, leaving equal space between them.</p>
-        </div>
-
-        <div class="example-container">
-            <h3>align-items</h3>
-            <div class="code-container">
-                <p>.flex-container {</p>
-                <p>  display: flex;</p>
-                <p>  align-items: center;</p>
-                <p>}</p>
-            </div>
-            <p>The <code>align-items</code> property aligns flex items along the cross axis. The <code>center</code> value vertically centers the items.</p>
-        </div>
-    </div>
-
-    <!-- Task for Students -->
-    <div class="container">
-        <h2>Task for Students</h2>
-        <p>Now it's your turn! Create an HTML document with a flex container and multiple flex items. Experiment with different values for <code>justify-content</code> and <code>align-items</code> to see how they affect the layout. Share your observations and any challenges you faced.</p>
-    </div>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2023 Web Development Learning. All rights reserved.</p>
-    </footer>
+        fetchDataAsync();
+    </script>
 
 </body>
 </html>
